@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "Blockchain Poker HUD",
+  "version": "0.0.1",
+  "browser_action": {
+      "default_icon": "icon.png",
+      "default_popup": "popup.html"
+  },
+  "background": {
+      "scripts": ["content.js", "range_generator.js", "details_generator.js"]
+  },
+  "content_scripts": [
+    {
+        "matches": ["https://blockchain.poker/"],
+        "js": [
+                "content.js",
+                "range_generator.js",
+                "details_generator.js",
+                "playerDetails.js",
+                "Game.js",
+                "utils.js"
+            ]
+    }
+  ],
+  "permissions": [
+    "storage"
+  ],
+  "icons": {
+    "128": "icon.png"
+  }
+}
